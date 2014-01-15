@@ -42,7 +42,7 @@ int native_compare_hexdigest(char *a, char *b) {
 
 static PyObject * compare_hexdigests(PyObject * self, PyObject * args) {
   char *a, *b;
-  int a_len, b_len;
+  int *a_len, *b_len;
   int i;
   if (!PyArg_ParseTuple(args, "s#s#", &a, &a_len, &b, &b_len)) {
     PyErr_SetString(PyExc_ValueError, "64 character hex digests required");
